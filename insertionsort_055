@@ -78,3 +78,11 @@ void display()
     cout << "\n"
          << endl;
 }
+int main()
+{
+    input();         // Memanggil input
+    insertionSort(); // Memproses pengurutan
+    display();       // Menampilkan hasil akhir
+
+    return 0;
+}
