@@ -1,2 +1,91 @@
 #include <iostream>
+
 using namespace std;
+
+// Deklarasi variabel global
+int arr[20];
+int n;
+
+// Prosedur untuk menginput data ke dalam array
+void input()
+{
+    while (true)
+    {
+        cout << "Masukan Jumlah Data Pada Array : ";
+        cin >> n;
+
+        if (n <= 20)
+        {
+            break;
+        }
+        else
+        {
+            cout << "\nArray Tidak Boleh Lebih dari 20\n"
+                 << endl;
+        }
+    }
+
+    cout << endl;
+    cout << "===============================" << endl;
+    cout << "===== Masukkan Elemen Array =====" << endl;
+    cout << "===============================" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Data ke-" << (i + 1) << " : ";
+        cin >> arr[i];
+    }
+}
+
+// Algoritma Insertion Sort
+void insertionSort()
+{
+    int temp, j;
+
+    for (int i = 1; i < n; i++)
+    {                  // Dimulai dari indeks 1
+        temp = arr[i]; // Simpan nilai sementara
+        j = i - 1;     // Set j ke elemen sebelumnya
+
+        // Geser elemen yang lebih besar dari temp ke kanan
+        while (j >= 0 && arr[j] > temp)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = temp; // Tempatkan temp di posisi yang benar
+
+        // Menampilkan langkah-langkah pengurutan (opsional)
+        cout << "\nStep " << i << ": ";
+        for (int k = 0; k < n; k++)
+        {
+            cout << arr[k] << " ";
+        }
+    }
+    cout << endl;
+}
+
+// Prosedur untuk menampilkan hasil akhir
+void display()
+{
+    cout << "\n===============================" << endl;
+    cout << "      Hasil Elemen Array       " << endl;
+    cout << "===============================" << endl;
+
+    for (int j = 0; j < n; j++)
+    {
+        cout << arr[j] << " ";
+    }
+    cout << "\n"
+         << endl;
+}
+
+int main()
+{
+    input();         // Memanggil input
+    insertionSort(); // Memproses pengurutan
+    display();       // Menampilkan hasil akhir
+
+    return 0;
+}
