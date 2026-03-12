@@ -64,3 +64,17 @@ void insertionSort()
     }
     cout << endl;
 }
+// Prosedur untuk menampilkan hasil akhir
+void display()
+{
+    cout << "\n===============================" << endl;
+    cout << "      Hasil Elemen Array       " << endl;
+    cout << "===============================" << endl;
+
+    for (int j = 0; j < n; j++)
+    {
+        cout << arr[j] << " ";
+    }
+    cout << "\n"
+         << endl;
+}
